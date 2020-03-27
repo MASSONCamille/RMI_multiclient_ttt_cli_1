@@ -1,9 +1,9 @@
-package RMI;
+package rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface RMIInterface extends Remote {
+public interface RMI_tictactoe extends Remote {
     public int ReStart() throws RemoteException;
     public void WaitOtherPlayer() throws RemoteException;
     public void Play(int pos) throws RemoteException;
