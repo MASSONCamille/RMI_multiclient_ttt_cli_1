@@ -33,8 +33,17 @@ public class Tictactoe {
         while (test == 0) {
             if (j == look_up.getCurrentPlayer()) {
                 System.out.println("actif");  //ligne test console
-                int pos = Integer.parseInt(JOptionPane.showInputDialog(fenetre ,"C'est votre tour J"+ j +", choisisez une case (1 à 9): ")) - 1;
-                look_up.Play(pos);
+                int pos = -1;
+                do {
+                    if (pos != -1) JOptionPane.showMessageDialog(fenetre, "Erreur de saisie");
+                    try {
+                        pos = Integer.parseInt(JOptionPane.showInputDialog(fenetre ,"C'est votre tour J"+ j +", choisisez une case (1 à 9): ")) - 1;
+                    }catch (Exception e){
+                        pos = -1;
+                    }
+                    if (pos < 0 || pos > 9) pos = -1;
+                }while (!look_up.Play(pos));
+
             } else look_up.WaitOtherPlayer();
 
 
@@ -47,7 +56,8 @@ public class Tictactoe {
             else JOptionPane.showMessageDialog(fenetre, "Vous avez perdu la partie");
 
             look_up.NextPlayer();
+            System.out.println("fin de tour");  //ligne test console
         }
-
+        System.out.println("sortie de boucle");  //ligne test console
     }
 }
