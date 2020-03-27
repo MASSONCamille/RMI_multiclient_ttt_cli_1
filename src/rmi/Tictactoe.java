@@ -42,8 +42,8 @@ public class Tictactoe {
 
             test = look_up.TestFin();
             if (test == 0);
-            else if (test == 3) JOptionPane.showMessageDialog(fenetre, "La partie ce termine et personne ne gagne");
-            else if (test == j) JOptionPane.showMessageDialog(fenetre, "Vous remporter la partie");
+            else if (test == 3) JOptionPane.showMessageDialog(fenetre, "La partie est termine et personne ne gagne");
+            else if (test == j) JOptionPane.showMessageDialog(fenetre, "Vous remportez la partie");
             else JOptionPane.showMessageDialog(fenetre, "Vous avez perdu la partie");
 
             look_up.NextPlayer();
