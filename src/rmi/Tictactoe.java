@@ -18,8 +18,7 @@ public class Tictactoe {
         }
 
         int j;
-        boolean fin;
-        int test;
+        int test = 0;
 
         JFrame fenetre = new JFrame();
         fenetre.setLocationRelativeTo(null);
@@ -28,11 +27,10 @@ public class Tictactoe {
 
         j = look_up.ReStart();
         System.out.println(j);  //ligne test console
-        fin = false;
 
         System.out.println(look_up.ImprGrille());
 
-        while (!fin) {
+        while (test == 0) {
             if (j == look_up.getCurrentPlayer()) {
                 System.out.println("actif");  //ligne test console
                 int pos = Integer.parseInt(JOptionPane.showInputDialog(fenetre ,"C'est votre tour J"+ j +", choisisez une case (1 à 9): ")) - 1;
@@ -42,9 +40,8 @@ public class Tictactoe {
 
             System.out.println(look_up.ImprGrille());
 
-            fin = true;
             test = look_up.TestFin();
-            if (test == 0) fin = false;
+            if (test == 0);
             else if (test == 3) JOptionPane.showMessageDialog(fenetre, "La partie ce termine et personne ne gagne");
             else if (test == j) JOptionPane.showMessageDialog(fenetre, "Vous remporter la partie");
             else JOptionPane.showMessageDialog(fenetre, "Vous avez perdu la partie");
